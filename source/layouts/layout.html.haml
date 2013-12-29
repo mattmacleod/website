@@ -1,0 +1,12 @@
+!!! 5
+%html.loading
+	%head
+		%meta{:charset => "utf-8"}/
+		%title= [data.page.title, "Matthew Macleod"].reject(&:blank?).join(" | ")
+
+		= stylesheet_link_tag "all"
+		= javascript_include_tag "all"
+
+	%body
+		#main_header= partial "layouts/header"
+		#main_content= yield

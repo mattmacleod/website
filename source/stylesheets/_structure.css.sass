@@ -2,7 +2,7 @@ html,body
   background: white
   -webkit-font-smoothing: antialiased
   font-family: $body-font
-  
+
 html
   overflow-y: scroll
 
@@ -11,3 +11,14 @@ html
 
 +establish-baseline
 
+body
+  +until-breakpoint($min-cols*2)
+    padding: 0 $gutter-width
+    
+.centered
+  // +grid-background
+  margin: 0 auto
+  width: 100%
+  @for $i from $min-cols through $max-cols/2
+    +breakpoint($i*2)
+      width: col-width($i*2)

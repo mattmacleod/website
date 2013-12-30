@@ -1,0 +1,10 @@
+=breakpoint($cols)
+  @media only screen and ( min-width: col-width($cols) + $gutter-width*2 )
+    @content
+    
+=until-breakpoint($cols)
+  @media only screen and ( max-width: col-width($cols) + $gutter-width*2 - 1px )
+    @content
+    
+@function col-width($n)
+  @return ($col-width * $n) + ($gutter-width * ($n - 1))

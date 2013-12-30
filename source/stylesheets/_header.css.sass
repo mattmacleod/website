@@ -13,6 +13,16 @@
 
   .menu
     float: right
+    font-family: "museosans-webfont"
+    font-weight: lighter
     li
       float: left
-      margin-left: $gutter-width
+    a
+      display: block
+      color: #222
+      margin: rhythm(0.5) 0
+      padding: rhythm(0.125) $gutter-width
+      +border-radius(5px)
+      &.active
+        background: #222
+        color: white

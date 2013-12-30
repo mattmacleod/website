@@ -8,7 +8,6 @@
     = javascript_include_tag "all"
 
   %body
-    #main_header
+    #structure-header
       .centered= partial "layouts/header"
-    #main_content
-      .centered= yield
+    #structure-content= yield

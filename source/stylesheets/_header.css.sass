@@ -16,9 +16,17 @@
 
   .menu
     float: right
-    padding: rhythm(0.5) 0
+    padding: rhythm(0.25) 0
     li
       float: left
     a
       margin-left: $gutter-width
       color: white
+      display: inline-block
+      padding: rhythm(0.25) $gutter-width
+      background: rgba(255,255,255,0.2)
+      +transition(all 200ms ease-in-out)
+      &:hover
+        +scale(1.1)
+        background: rgba(255,255,255,0.3)
+

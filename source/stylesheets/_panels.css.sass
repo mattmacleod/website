@@ -1,14 +1,17 @@
 .panel
   padding: rhythm(1) $gutter-width
 
+  h2
+    +adjust-font-size-to(24px)
+    text-transform: uppercase
+
 #panel-about
   text-align: center
   background: $color-1
   color: white
   padding: rhythm(2) $gutter-width
-  h1
+  h2
     +adjust-font-size-to(60px)
-    text-transform: uppercase
   p
     +adjust-font-size-to(18px)
     margin: 0 auto
@@ -18,3 +21,41 @@
     background: rgba(255,255,255,0.2)
     padding: 3px 10px
     color: white
+    display: inline-block
+    +transition(all 200ms ease-in-out)
+    &:hover
+      +scale(1.1)
+
+#panel-contact
+  background: #333
+  color: white
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+
+  .notes
+    float: left
+    width: 50%
+
+  form
+    float: right
+    width: 50%
+    .field
+      padding: rhythm(0.25) $gutter-width/2
+      input, textarea
+        width: 100%
+        border: 1px #333 solid
+        padding: rhythm(0.25) $gutter-width/2
+        background: #444
+        +adjust-font-size-to(16px)
+        color: white
+        &[type=submit]
+          background: $color-1
+          cursor: pointer
+          float: right
+          width: auto
+          padding: rhythm(0.25) $gutter-width*2
+        &:focus
+          outline: none
+          border-color: $color-1

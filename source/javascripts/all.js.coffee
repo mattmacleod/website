@@ -1,4 +1,2 @@
-#= require lib/jquery
-#= require lib/underscore
-
+#= require lib/zepto
 #= require _setup

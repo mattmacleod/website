@@ -1,9 +1,7 @@
-.title
-  %h1
-    = link_to "Matthew MacLeod", "#panel-about"
-%nav.menu
-  %ul
-    %li= link_to "About", "#panel-about", :class => :active
-    %li= link_to "Blog", "#panel-blog"
-    %li= link_to "Portfolio", "#panel-portfolio"
-    %li= link_to "Contact me", "#panel-contact"
+.centered
+  .title= link_to "Matthew MacLeod", "/"
+  %nav.menu
+    = link_to "About", "#panel-about", :class => :active
+    = link_to "Blog", "#panel-blog"
+    = link_to "Portfolio", "#panel-portfolio"
+    = link_to "Contact me", "#panel-contact"

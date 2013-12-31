@@ -48,6 +48,7 @@
 # end
 
 require "active_support/core_ext/array"
+
 helpers do
 	def blog_posts
 		sitemap.resources.select {|p| p.path =~ /^blog\// }.map do |post|

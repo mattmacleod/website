@@ -1,0 +1,37 @@
+#panel-about
+  background: $color-1
+  color: white
+  text-align: center
+  padding: rhythm(2) $gutter-width
+
+  h2
+    +adjust-font-size-to(60px)
+    +trailer(0)
+
+  p
+    +adjust-font-size-to(18px)
+    margin: 0 auto
+    +leader(1)
+    max-width: col-width(8)
+
+    a
+      display: inline-block
+      background: rgba(255,255,255,0.2)
+      padding: 0px 6px
+      color: white
+      +transition(all 200ms ease-in-out)
+      font-weight: bold
+      &:hover
+        +scale(1.05)
+        background: rgba(255,255,255,0.3)
+
+  .social
+    +leader(0.5)
+    +adjust-font-size-to(32px)
+    a
+      color: white
+      display: inline-block
+      +transition(all 200ms ease-in-out)
+      &:hover
+        +opacity(0.8)
+        +scale(1.5)

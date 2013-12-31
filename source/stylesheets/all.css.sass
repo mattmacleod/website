@@ -1,14 +1,26 @@
-@import variables
+$gutter-width:     15px !default
+$base-font-size:   16px !default
+$base-line-height: 24px !default
+
+$min-cols:     3    !default
+$max-cols:     14   !default
+$col-width:    76px !default
+$gutter-width: 20px !default
+
+$color-1: #1599FF !default
+
+$body-font:   "Montserrat", Helvetica, Arial, sans-serif
+$header-font: "Montserrat", Helvetica, Arial, sans-serif
+
+$grid-background-column-width:    $col-width
+$grid-background-gutter-width:    $gutter-width
+$grid-background-baseline-height: $base-line-height
+$grid-background-baseline-color:  rgba(0,0,0,0.2)
+$grid-background-column-color:    rgba(0,0,0,0.05)
+$grid-background-total-columns:   $max-cols
 
 @import compass
 @import compass/reset
 
-@import fonts
-@import mixins
-
-@import basic
-@import structure
-@import text
-
-@import header
-@import panels
+@import "setup/**/*"
+@import "basic/**/*"

@@ -3,44 +3,14 @@ title: Software Engineer
 ---
 
 .panel#panel-about
-  .centered
-    %h2 Hello!
-    %p.lede I'm a London-based software engineer and designer from Edinburgh. I love all things technical and design-y, especially Linux, Rails, Javascript, CSS, Objective-C and Python. I currently work as an engineer with #{ link_to "Digital Science", "http://www.digital-science.com", :target => :_blank } but I also freelance – get in touch if you'd like to talk.
-    = partial :social_links
+  .centered= partial "home/about"
 
 .panel#panel-blog
-  .centered
-    %h2 Blog
-    %ol
-      - blog_posts.each do |post|
-        %li
-          - link_to post[:page].path do
-            %h3= post[:title]
-            %time{ :datetime => post[:date].strftime("%Y-%M-%d") }= post[:date].strftime "%A %d %B %Y"
-
+  .centered= partial "home/blog"
+    
 .panel#panel-portfolio
-  .centered
-    %h2 Portfolio
+  .centered= partial "home/portfolio"
 
 .panel#panel-contact
-  .centered
-    %h2 Contact me
-    .notes
-      %p You can fill in the form, or use the details below.
-      = partial :social_links
-      %dl
-        %dt Email
-        %dd= mail_to "mail@matthewmacleod.co.uk"
-        %dt Phone
-        %dd +44 7976 121 482
-
-    %form
-      %fieldset
-        .field.half
-          %input{ type: :text, name: :name, required: true, placeholder: "Your name" }/
-        .field.half
-          %input{ type: :email, name: :email, required: true, placeholder: "Your email address" }/
-        .field
-          %textarea{ name: :content, rows: 5, placeholder: "Your message" }
-        .field
-          %input{ type: :submit, value: "Send it" }
+  .centered= partial "home/contact"
+    

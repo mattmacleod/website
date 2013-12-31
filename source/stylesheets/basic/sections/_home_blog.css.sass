@@ -1,0 +1,54 @@
+#panel-blog
+
+  li
+    float: left
+    padding-left: $gutter-width
+
+    // Responsiveness
+
+    +until-breakpoint(8)
+      width: 100%
+      padding-left: 0
+    +breakpoint(8)
+      width: 50%
+      &:nth-child(2n+1)
+        padding-left: 0
+        clear: left
+    +breakpoint(12)
+      width: 33.3%
+      &:nth-child(2n+1)
+        padding-left: $gutter-width
+        clear: none
+      &:nth-child(3n+1)
+        padding-left: 0
+        clear: left
+
+  a
+    display: block
+    color: #222
+    padding: rhythm(0.25) $gutter-width/2 rhythm(0.25) col-width(0.5)+$gutter-width*2
+    +trailer(1)
+    +transition(all 200ms ease-in-out)
+    position: relative
+    
+    &:before
+      content: "circlestar"
+      position: absolute
+      +symbol-font
+      color: $color-1
+      +adjust-font-size-to(36px)
+      left: $gutter-width
+    
+    &:hover
+      +scale(1.05)
+      border-color: transparent
+      background: transparentize($color-1, 0.9)
+
+  h3
+    +adjust-font-size-to(20px)
+    color: #333
+
+  time
+    +adjust-font-size-to(14px)
+    text-transform: uppercase
+    color: #aaa

@@ -1,6 +1,6 @@
 window.app = 
 		
 	setup: ->
-		$("html").addClass "loaded"
+		$("html").removeClass("loading").addClass("loaded")
 
 $(document).on "ready", app.setup

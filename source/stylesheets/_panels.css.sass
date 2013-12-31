@@ -1,9 +1,11 @@
 .panel
   padding: rhythm(1) $gutter-width
+  +clearfix
 
   h2
     +adjust-font-size-to(24px)
     text-transform: uppercase
+    +trailer(0.5)
 
 #panel-about
   text-align: center
@@ -12,6 +14,7 @@
   padding: rhythm(2) $gutter-width
   h2
     +adjust-font-size-to(60px)
+    +trailer(0)
   p
     +adjust-font-size-to(18px)
     margin: 0 auto
@@ -37,13 +40,41 @@
         +scale(1.5)
 
 
+#panel-blog
+  li
+    float: left
+    width: 33.3%
+    padding-left: $gutter-width
+    &:nth-child(3n+1)
+      padding-left: 0
+      clear: left
+  a
+    display: block
+    color: #222
+    padding: rhythm(0.25) $gutter-width/2 rhythm(0.25) col-width(1)+$gutter-width
+    +trailer(1)
+    +transition(all 200ms ease-in-out)
+    position: relative
+    &:before
+      content: "circlestar"
+      position: absolute
+      +symbol-font
+      color: $color-1
+      +adjust-font-size-to(36px)
+      left: $gutter-width
+    &:hover
+      +scale(1.05)
+      border-color: transparent
+      background: transparentize($color-1, 0.9)
+  h3
+    +adjust-font-size-to(20px)
+    color: #333
+
+
+
 #panel-contact
   background: #333
   color: white
-  position: absolute
-  bottom: 0
-  left: 0
-  right: 0
 
   .notes
     float: left

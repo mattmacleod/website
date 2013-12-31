@@ -19,7 +19,7 @@
     +adjust-font-size-to(18px)
     margin: 0 auto
     +leader(1)
-    max-width: col-width(14)
+    max-width: col-width(8)
   a
     background: rgba(255,255,255,0.2)
     padding: 3px 10px
@@ -43,15 +43,28 @@
 #panel-blog
   li
     float: left
-    width: 33.3%
     padding-left: $gutter-width
-    &:nth-child(3n+1)
-      padding-left: 0
-      clear: left
+    +until-breakpoint(8)
+      width: 100%
+    +breakpoint(8)
+      width: 50%
+      &:nth-child(2n+1)
+        padding-left: 0
+        clear: left
+    +breakpoint(12)
+      width: 33.3%
+      &:nth-child(2n+1)
+        padding-left: $gutter-width
+        clear: none
+      &:nth-child(3n+1)
+        padding-left: 0
+        clear: left
+
+
   a
     display: block
     color: #222
-    padding: rhythm(0.25) $gutter-width/2 rhythm(0.25) col-width(1)+$gutter-width
+    padding: rhythm(0.25) $gutter-width/2 rhythm(0.25) col-width(0.5)+$gutter-width*2
     +trailer(1)
     +transition(all 200ms ease-in-out)
     position: relative
@@ -80,7 +93,14 @@
     float: left
     width: 50%
     +leader(0.5)
+    +clearfix
     padding-right: $gutter-width/2
+    
+    +until-breakpoint(8)
+      width: 100%
+      float: none
+      padding: 0
+
     a
       color: white
     .social
@@ -94,7 +114,7 @@
           +scale(1.5)
           +opacity(0.8)
     dt
-      width: col-width(2)
+      width: col-width(1)
       float: left
       clear: left
       font-weight: bold
@@ -105,12 +125,21 @@
     float: right
     width: 50%
     padding-left: $gutter-width/2
+    
+    +until-breakpoint(8)
+      width: 100%
+      float: none
+      padding: 0
+      +leader(1)
+
     .field
       padding: rhythm(0.25) $gutter-width/2
       width: 100%
       float: left
       &.half
         width: 50%
+        +until-breakpoint(6)
+          width: 100%
       input, textarea
         width: 100%
         border: 1px #333 solid

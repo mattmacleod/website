@@ -17,13 +17,13 @@ body
 +establish-baseline
     
 .centered
-  // +grid-background
+
+  +grid-background
+  +clearfix
+
   height: 100%
   margin: 0 auto
   width: 100%
-
-  +until-breakpoint($min-cols*2)
-    padding: 0 $gutter-width
 
   @for $i from $min-cols through $max-cols/2
     +breakpoint($i*2)

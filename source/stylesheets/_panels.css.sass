@@ -46,6 +46,7 @@
     padding-left: $gutter-width
     +until-breakpoint(8)
       width: 100%
+      padding-left: 0
     +breakpoint(8)
       width: 50%
       &:nth-child(2n+1)
@@ -93,7 +94,7 @@
     float: left
     width: 50%
     +leader(0.5)
-    +clearfix
+    +legacy-pie-clearfix
     padding-right: $gutter-width/2
     
     +until-breakpoint(8)

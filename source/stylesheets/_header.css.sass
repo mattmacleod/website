@@ -3,26 +3,22 @@
   +padding-leader(0.5)
   +padding-trailer(0.5)
   +clearfix
+  background: $color-1
 
   .title
     float: left
     h1
-      +adjust-font-size-to(40px)
-    .tagline
-      +adjust-font-size-to(18px)
+      +adjust-font-size-to(24px)
+      text-transform: uppercase
+      font-weight: bold
+      a
+        color: white
 
   .menu
     float: right
-    font-family: "museosans-webfont"
-    font-weight: lighter
+    padding: rhythm(0.5) 0
     li
       float: left
     a
-      display: block
-      color: #222
-      margin: rhythm(0.5) 0
-      padding: rhythm(0.125) $gutter-width
-      +border-radius(5px)
-      &.active
-        background: #222
-        color: white
+      margin-left: $gutter-width
+      color: white

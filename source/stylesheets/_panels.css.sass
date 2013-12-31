@@ -25,6 +25,16 @@
     +transition(all 200ms ease-in-out)
     &:hover
       +scale(1.1)
+  .social
+    +leader(0.5)
+    +adjust-font-size-to(32px)
+    a
+      background: none
+      padding: 0
+      &:hover
+        +opacity(0.8)
+        +scale(1.5)
+
 
 #panel-contact
   background: #333
@@ -37,12 +47,38 @@
   .notes
     float: left
     width: 50%
+    +leader(0.5)
+    padding-right: $gutter-width/2
+    a
+      color: white
+    .social
+      +adjust-font-size-to(32px)
+      +leader(0.25)
+      +trailer(0.25)
+      a
+        display: inline-block
+        +transition(all 200ms ease-in-out)
+        &:hover
+          +scale(1.5)
+          +opacity(0.8)
+    dt
+      width: col-width(2)
+      float: left
+      clear: left
+      font-weight: bold
+    dd
+      float: left
 
   form
     float: right
     width: 50%
+    padding-left: $gutter-width/2
     .field
       padding: rhythm(0.25) $gutter-width/2
+      width: 100%
+      float: left
+      &.half
+        width: 50%
       input, textarea
         width: 100%
         border: 1px #333 solid

@@ -6,7 +6,7 @@ title: Software Engineer
   .centered
     %h2 Hello!
     %p.lede I'm a London-based software engineer from Edinburgh. I love all things technical, especially Linux, Rails, Javascript, Objective-C and Python. I am an engineer at #{ link_to "Digital Science", "http://www.digital-science.com", :target => :_blank } but I also freelance for a variety of clients, and I'm available for new commissions.
-    %p.lede Please #{ link_to "contact me" } if you'd like to talk!
+    = partial :social_links
 
 .panel#panel-blog
   %h2 Blog
@@ -15,23 +15,24 @@ title: Software Engineer
   %h2 Portfolio
 
 .panel#panel-contact
-  %h2 Contact
-  .notes
-    %p Fill in the form to contact me, or get in touch using the details below.
-    %dl
-      %dt Email
-      %dd= mail_to "mail@matthewmacleod.co.uk"
-      %dt Phone
-      %dd +44 7976 121 482
+  .centered
+    %h2 Contact me
+    .notes
+      %p You can fill in the form, or use the details below.
+      = partial :social_links
+      %dl
+        %dt Email
+        %dd= mail_to "mail@matthewmacleod.co.uk"
+        %dt Phone
+        %dd +44 7976 121 482
 
-
-  %form
-    %fieldset
-      .field
-        %input{ type: :text, name: :name, required: true, placeholder: "Your name" }/
-      .field
-        %input{ type: :email, name: :email, required: true, placeholder: "Your email address" }/
-      .field
-        %textarea{ name: :content, rows: 5, placeholder: "Your message" }
-      .field
-        %input{ type: :submit, value: "Send it" }
+    %form
+      %fieldset
+        .field.half
+          %input{ type: :text, name: :name, required: true, placeholder: "Your name" }/
+        .field.half
+          %input{ type: :email, name: :email, required: true, placeholder: "Your email address" }/
+        .field
+          %textarea{ name: :content, rows: 5, placeholder: "Your message" }
+        .field
+          %input{ type: :submit, value: "Send it" }

@@ -1,0 +1,6 @@
+%head
+    %meta{:charset => "utf-8"}/
+    %title= [data.page.title, "Matthew Macleod"].reject(&:blank?).join(" — ")
+
+    = stylesheet_link_tag "all"
+    = javascript_include_tag "all"

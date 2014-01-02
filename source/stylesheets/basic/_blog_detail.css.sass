@@ -1,0 +1,16 @@
+body.blog_post #structure-content
+  padding-left: $gutter-width
+  padding-right: $gutter-width
+  +leader(1)
+  +trailer(2)
+  
+  h1
+    +adjust-font-size-to(48px)  
+    +trailer(0.5)
+    font-weight: bold
+  h2
+    +adjust-font-size-to(24px)
+    text-transform: uppercase
+
+  p
+    +trailer(1)

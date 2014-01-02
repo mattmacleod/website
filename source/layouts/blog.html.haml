@@ -2,7 +2,10 @@
 %html.loading
   = partial "layouts/head"
 
-  %body
+  %body.blog_post
     #structure-header= partial "layouts/header"
-    #structure-content= yield 
+    #structure-content
+      .centered
+        %h2 Blog
+        = yield 
     #structure-footer= partial "layouts/footer"

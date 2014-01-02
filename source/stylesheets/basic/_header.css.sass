@@ -15,6 +15,7 @@
   .menu
     float: right
     padding: rhythm(0.25) 0
+    position: relative
     a
       display: inline-block
       margin-left: $gutter-width
@@ -25,3 +26,35 @@
       &:hover
         +scale(1.1)
         background: rgba(255,255,255,0.3)
+
+    +until-breakpoint(8)
+      float: none
+      padding: 0
+      +padding-leader(2)
+      &:before
+        cursor: pointer
+        content: '\e808'
+        position: absolute
+        top: 0
+        right: 0
+        padding: rhythm(0.15) $gutter-width
+        +symbol-font
+        color: white
+        +adjust-font-size-to(28px,1.5)
+      a
+        margin: 0
+        display: block
+        float: none
+        &:hover
+          +scale(1)
+      .items
+        margin-bottom: -100%
+        +transition(all 200ms ease-in-out)
+        +opacity(0)
+      &.menu-visible
+        .items
+          margin-bottom: 0
+          +opacity(1)
+        &:before
+          background: rgba(255,255,255,0.2)
+

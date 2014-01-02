@@ -11,6 +11,7 @@ code
   +border-radius(3px)
   padding: 1px 4px
   +adjust-font-size-to(14px,1)
+
 .CodeRay
   font-family: monospace
   padding: rhythm(0.5) $gutter-width
@@ -18,21 +19,29 @@ code
   +border-radius(3px)
   overflow: auto
   +trailer(1)
+
 .content
   +adjust-font-size-to(18px)
   font-family: "proxima-nova", Helvetica, Arial, sans-serif
   a
     color: $color-1
     font-weight: bold
+    &:hover
+      text-decoration: underline
   h1
     +adjust-font-size-to(40px)  
     +trailer(0.5)
+    +leader(0.5)
     font-weight: bold    
   h2
     +adjust-font-size-to(24px)
     font-weight: bold
   p
     +trailer(1)
+
+  p.lede
+    +adjust-font-size-to(20px)
+
   ul
     padding-left: $gutter-width
     margin-left: $gutter-width

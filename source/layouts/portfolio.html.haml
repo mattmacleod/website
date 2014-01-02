@@ -1,0 +1,8 @@
+!!! 5
+%html.loading
+  = partial "layouts/head"
+
+  %body.blog_post
+    #structure-header= partial "layouts/header"
+    #structure-content~yield
+    #structure-footer= partial "layouts/footer"

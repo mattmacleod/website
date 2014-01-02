@@ -51,6 +51,10 @@ with_layout :blog do
   page "/blog/*"
 end
 
+with_layout :portfolio do
+  page "/portfolio/*"
+end
+
 set :markdown, {:coderay_line_numbers => nil}
 
 require "active_support/core_ext/array"

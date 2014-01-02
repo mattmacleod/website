@@ -33,15 +33,29 @@
 
   load_url_in_overlay: (url) ->
     window.app.content.show_overlay()
-    console.log url
     $.ajax
       url: url
       success: (data) ->
-        console.log "I'm here"
-        console.log data
-        $('#page_overlay').html data
-      error: (data) ->
-        console.log "error"
+        values = window.app.content.process_content_for_overlay data
+        console.log values
+        $('#page-overlay').html values.content
 
   open_blog_post: (url) ->
     @load_url_in_overlay url
+
+  process_content_for_overlay: (content) ->
+
+    # Create an HTML document
+    doc = document.implementation.createHTMLDocument ''
+    doc.open 'replace'
+    doc.write content
+    doc.close()
+
+    # Extract the interesting bits we're concerned with
+    content_tree = $(doc)
+    title = content_tree.find("title").html()
+    content = content_tree.find("#structure-content").html()
+    return {
+      title: title
+      content: content
+    }

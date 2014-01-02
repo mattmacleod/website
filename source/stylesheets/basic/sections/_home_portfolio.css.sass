@@ -1,0 +1,63 @@
+#panel-portfolio
+  overflow: hidden
+  .links
+    text-align: center
+  a
+    display: inline-block
+    position: relative
+    +transition(all 200ms ease-in-out)
+    margin: 0 $gutter-width*2 rhythm(1) $gutter-width*1
+    &:hover
+      +scale(1.05)
+      +opacity(0.9)
+      img
+        +filter(grayscale(0.8))
+      span
+        +scale(1.1)
+        +box-shadow(0 0 10px rgba(0,0,0,0.2))
+  span
+    +transition(all 200ms ease-in-out)
+    background: $color-1
+    padding: 3px 10px
+    color: white
+    text-transform: uppercase
+    font-weight: bold
+    position: absolute
+
+  img
+    +transition(all 200ms ease-in-out)
+    width: 100%
+
+  +until-breakpoint(6)
+    a
+      width: 90% !important
+      +leader(1)
+      
+#portfolio-listing-fest
+  width: 500px
+  span
+    bottom: rhythm(0.5)
+    right: $gutter-width
+
+#portfolio-listing-park-circus
+  width: 287px
+  span
+    top: 0
+    right: 0
+
+#portfolio-listing-iaseminars
+  width: 287px
+  position: relative
+  top: -30px
+  +breakpoint(6)
+    top: 0
+  +breakpoint(8)
+    top: -30px
+  +breakpoint(10)
+    top: 0
+  +breakpoint(14)
+    top: -30px
+  span
+    left: 0
+    bottom: rhythm(0.5)
+

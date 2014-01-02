@@ -65,6 +65,7 @@ helpers do
 			}
 		end.select { |post| post[:date] }.sort_by { |post| post[:date] }.reverse
 	end
+
 end
 
 set :css_dir, 'stylesheets'

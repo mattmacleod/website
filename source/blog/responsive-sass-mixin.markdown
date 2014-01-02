@@ -1,5 +1,5 @@
 ---
-title: Responsive mixins for Sass | Matthew MacLeod
+title: Responsive mixins for Sass
 blog_title: Responsive mixins for Sass
 date: 2013-05-29
 ---

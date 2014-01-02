@@ -49,21 +49,3 @@ body
 
 #structure-content
   +padding-leader(3)
-  +transition(all 200ms ease-in-out)
-  &.overlay-opened
-    // +opacity(0.1)
-
-#page-overlay
-  z-index: 100
-  position: fixed
-  background: transparentize(white, 0.035)
-  bottom: rhythm(3)
-  top: rhythm(3)
-  +box-shadow(0 0 100px rgba(0,0,0,0.9))
-  width: 100%
-  +transform(scale(0,1))
-  +transition(all 400ms ease-in-out)
-  +opacity(0)
-  &.visible
-    +transform(scale(1,1))
-    +opacity(1)

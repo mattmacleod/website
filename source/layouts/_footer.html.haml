@@ -1,0 +1,21 @@
+.centered
+  %h2 Contact me
+  .notes
+    %p You can fill in the form, or use the details below.
+    = partial "parts/social_links"
+    %dl
+      %dt Email
+      %dd= mail_to "mail@matthewmacleod.co.uk"
+      %dt Phone
+      %dd +44 7976 121 482
+
+  %form
+    %fieldset
+      .field.half
+        %input{ type: :text, name: :name, required: true, placeholder: "Your name" }/
+      .field.half
+        %input{ type: :email, name: :email, required: true, placeholder: "Your email address" }/
+      .field
+        %textarea{ name: :content, rows: 5, placeholder: "Your message" }
+      .field
+        %input{ type: :submit, value: "Send it" }

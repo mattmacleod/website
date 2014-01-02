@@ -1,7 +1,13 @@
-#panel-contact
+#structure-footer
   background: #333
   color: white
-
+  +clearfix
+  padding: rhythm(1) $gutter-width
+  h2
+    +adjust-font-size-to(24px)
+    text-transform: uppercase
+    +trailer(0.5)
+  
   .notes
     float: left
     width: 50%

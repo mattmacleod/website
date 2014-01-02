@@ -39,13 +39,10 @@ body
 
   +transition(width 100ms ease-in-out)
 
-#structure-header
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  z-index: 1000
-  +transform(rotateY(0deg))
-
-#structure-content
-  +padding-leader(3)
+.supertitle
+  +adjust-font-size-to(22px)
+  text-transform: uppercase
+  a
+    color: $color-1
+  span.sep
+    color: #ddd

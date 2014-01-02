@@ -6,6 +6,9 @@
     #structure-header= partial "layouts/header"
     #structure-content
       .centered
-        %h2 Blog
+        .supertitle
+          = link_to "Home", "/"
+          %span.sep >
+          Blog
         = yield 
     #structure-footer= partial "layouts/footer"

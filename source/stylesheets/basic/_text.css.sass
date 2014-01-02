@@ -4,12 +4,43 @@
 a
   text-decoration: none
 
+code
+  font-family: monospace
+  border: 1px #ddd solid
+  background: #eee
+  +border-radius(3px)
+  padding: 1px 4px
+  +adjust-font-size-to(14px,1)
 .CodeRay
   font-family: monospace
   padding: rhythm(0.5) $gutter-width
-  border: 2px #ddd solid
-  background: #eee
+  border: 1px #ddd solid
   +border-radius(3px)
-  
-  .line-numbers
-    display: inline-block
+  overflow: auto
+  +trailer(1)
+.content
+  +adjust-font-size-to(18px)
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif
+  a
+    color: $color-1
+    font-weight: bold
+  h1
+    +adjust-font-size-to(40px)  
+    +trailer(0.5)
+    font-weight: bold    
+  h2
+    +adjust-font-size-to(24px)
+    font-weight: bold
+  p
+    +trailer(1)
+  ul
+    padding-left: $gutter-width
+    margin-left: $gutter-width
+    list-style-type: square
+    +trailer(1)
+    li
+      +trailer(0.25)
+  strong
+    font-weight: bold
+  em
+    font-style: italic

@@ -51,7 +51,7 @@ with_layout :blog do
   page "/blog/*"
 end
 
-set :markdown, {:coderay_line_numbers => nil, :coderay_tab_width => 1}
+set :markdown, {:coderay_line_numbers => nil}
 
 require "active_support/core_ext/array"
 

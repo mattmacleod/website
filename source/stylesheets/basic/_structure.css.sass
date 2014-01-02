@@ -33,9 +33,9 @@ body
   margin: 0 auto
   width: 100%
 
-  @for $i from $min-cols through $max-cols/2
-    +breakpoint($i*2)
-      width: col-width($i*2)
+  @for $i from $min-cols through $max-cols/$col-unit
+    +breakpoint($i*$col-unit)
+      width: col-width($i*$col-unit)
 
   +transition(width 100ms ease-in-out)
 

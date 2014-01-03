@@ -24,8 +24,10 @@
     a
       color: white
       +transition(all 200ms ease-in-out)
+      display: block
       &:hover
-        text-decoration: underline
+        +scale(1.1)
+
     .social
       +adjust-font-size-to(32px)
       +leader(0.25)
@@ -36,6 +38,7 @@
           +scale(1.5)
           +opacity(0.8)
           text-decoration: none
+
     dt
       width: col-width(1)
       float: left
@@ -43,6 +46,22 @@
       font-weight: bold
     dd
       float: left
+
+    .additional_links
+      +padding-leader(1)
+      clear: left
+      a
+        display: inline-block
+        margin-right: $gutter-width
+        &:hover
+          +scale(1.1)
+    .fsfe_link
+      +leader(1)
+      a
+        &:hover
+          +scale(1)
+      img
+        width: 140px
 
   form
     float: right

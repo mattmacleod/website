@@ -8,6 +8,12 @@
       %dd= mail_to "mail@matthewmacleod.co.uk"
       %dt Phone
       %dd +44 7976 121 482
+    .additional_links
+      = link_to "CV/Résumé [pdf]", "/cv/matthew-macleod-cv-2014.pdf"
+      = link_to "Credits", "/credits.html"
+    .fsfe_link
+      - link_to "https://fsfe.org" do
+        = image_tag "fsfe.svg", :class => :fsfe_image
 
   %form
     %fieldset
@@ -16,6 +22,6 @@
       .field.half
         %input{ type: :email, name: :email, required: true, placeholder: "Your email address" }/
       .field
-        %textarea{ name: :content, rows: 5, placeholder: "Your message" }
+        %textarea{ name: :content, rows: 6, placeholder: "Your message" }
       .field
         %input{ type: :submit, value: "Send it" }

@@ -23,13 +23,15 @@
 
     a
       color: white
+      +transition(all 200ms ease-in-out)
+      &:hover
+        text-decoration: underline
     .social
       +adjust-font-size-to(32px)
       +leader(0.25)
       +trailer(0.25)
       a
         display: inline-block
-        +transition(all 200ms ease-in-out)
         &:hover
           +scale(1.5)
           +opacity(0.8)
@@ -75,6 +77,10 @@
           float: right
           width: auto
           padding: rhythm(0.25) $gutter-width*2
+          +appearance(none)
+          +transition(all 200ms ease-in-out)
+          &:hover
+            +scale(1.1)
      
         &:focus
           outline: none

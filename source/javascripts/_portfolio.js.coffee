@@ -3,6 +3,9 @@
   setup: ->
     intro_panel = $('#fest-portfolio-page .portfolio-intro')
     galleries   = $(".portfolio-gallery")
+
+    return if Modernizr.touch
+
     $(window).off("scroll").on "scroll", ->
       pos = $(window).scrollTop()
       window_height = $(window).height()

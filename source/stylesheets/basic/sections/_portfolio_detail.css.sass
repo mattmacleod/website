@@ -27,11 +27,16 @@
       +text-shadow(3px 3px 5px rgba(0,0,0,0.6))
       text-transform: uppercase
       +trailer(0.25)
+      +until-breakpoint(6)
+        +adjust-font-size-to(64px,2.25)
+
     p.lede
       color: white
       +adjust-font-size-to(26px, 1.5)
+      width: 100%
       +until-breakpoint(6)
-        +adjust-font-size-to(24px,1.3)
+        +adjust-font-size-to(22px,1.3)
+
   .portfolio-content
     padding: rhythm(1) 0
 
@@ -62,9 +67,19 @@
 
   .cover_image
     float: right
-    width: 45%
-    margin-left: 70px
-  
+    width: col-width(6)
+    margin-left: col-width(1)
+    +until-breakpoint(14)
+      margin-left: col-width(0.5)
+    +until-breakpoint(12)
+      width: col-width(5)
+      margin-left: col-width(0.5)
+    +until-breakpoint(10)
+      margin-left: 0
+      width: 100%
+      +leader(-1)
+      +trailer(1)
+
   .image-padding
     +trailer(1)
     overflow: hidden
@@ -83,6 +98,10 @@
   img.preview_grid_image_2
     width: 50%
     float: right
+  img.preview_grid_image_1, img.preview_grid_image_2
+    +until-breakpoint(10)
+      float: none
+      width: 100%
 
   img.issue_inner_image_1
     width: 50%
@@ -95,15 +114,27 @@
     display: block
     margin: 0 auto
 
+  img.issue_inner_image_1,
+  img.issue_inner_image_2,
+  img.issue_inner_image_3
+    +until-breakpoint(10)
+      width: 100%
+
   img.website_ipad_1
     width: 45%
     float: left
     display: block
     clear: left
+    +until-breakpoint(10)
+      width: 100%
+      float: none
 
   img.braincube_1
     width: 50%
     float: right
+    +until-breakpoint(10)
+      width: 100%
+      float: none
 
   .cover-image-set
     overflow: hidden
@@ -111,10 +142,18 @@
     img
       width: 20%
       float: left
+      +until-breakpoint(10)
+        width: 50%
+        &:nth-child(3)
+          display: none
 
   .website-intro
     width: 50%
     margin-left: 5%
     float: left
+    +until-breakpoint(10)
+      width: 100%
+      margin-left: 0
+      float: none
 
 

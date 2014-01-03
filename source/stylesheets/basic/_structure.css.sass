@@ -52,3 +52,10 @@ body
   text-transform: uppercase
   a
     color: $color-1
+
+#structure-content
+  +transition(all 400ms ease-in-out)
+  +filter(none)
+  &.fade
+    +filter(blur(10px))
+    +opacity(0.4)

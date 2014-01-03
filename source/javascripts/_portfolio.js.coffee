@@ -12,7 +12,6 @@
     intro_panel = $('#fest-portfolio-page .portfolio-intro')
     galleries   = $(".portfolio-gallery")
     link        = $("#back_to_top_link")
-
     return if Modernizr.touch
 
     $(window).off("scroll").on "scroll", ->
@@ -53,5 +52,11 @@
           link.hide()
         , 200
 
-
+      window.clearTimeout fadeTimeout
+      if (pos + window_height) >= $(document).height()
+        fadeTimeout = window.setTimeout ->
+          $("#structure-content").addClass "fade"
+        , 666
+      else
+        $("#structure-content").removeClass "fade"
 

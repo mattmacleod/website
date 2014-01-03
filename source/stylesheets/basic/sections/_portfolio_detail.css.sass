@@ -1,25 +1,32 @@
 .portfolio-page
+
   .content-title
     color: white
-    +text-shadow(1px 1px 3px rgba(0,0,0,1))
     a,.sep
       color: rgba(255,255,255,0.5)
+
   .content
     +legacy-pie-clearfix
     &.clear
       clear: left
+
   .portfolio-intro
     margin: rhythm(-1) ($gutter-width*-1) 0 ($gutter-width*-1)
     padding: rhythm(1) $gutter-width
     position: relative
     .centered
       min-height: rhythm(20)
+
   .centered
     overflow: hidden
     position: relative
     .text
       position: absolute
       bottom: 0
+      a
+        color: white
+        text-decoration: underline
+
     h1
       color: white
       font-weight: bold
@@ -30,10 +37,19 @@
       +until-breakpoint(6)
         +adjust-font-size-to(64px,2.25)
 
+    h2
+      text-transform: uppercase
+      +adjust-font-size-to(34px,2, 18px)
+      +trailer(0.5)
+      font-weight: bold
+      &.left
+        float: left
+
     p.lede
       color: white
       +adjust-font-size-to(26px, 1.5)
       width: 100%
+      +text-shadow(3px 3px 5px rgba(0,0,0,0.6))
       +until-breakpoint(6)
         +adjust-font-size-to(22px,1.3)
 
@@ -49,21 +65,19 @@
 
 #fest-portfolio-page
 
-  h2.section_title
-    text-transform: uppercase
-    +adjust-font-size-to(34px,2)
-    +trailer(0.5)
-    font-weight: bold
-    &.left
-      float: left
-
   .portfolio-intro
     background:
       image: image-url('fest/header.jpg')
       color: black
       repeat: no-repeat
+      position: center 0
       size: 100%
       attachment: fixed
+    +until-breakpoint(8)
+      background-size: auto 100%
+      background-position: center 0
+      background-attachment: local
+
 
   .cover_image
     float: right
@@ -157,3 +171,46 @@
       float: none
 
 
+#park-circus-portfolio-page
+
+  .content-title
+    color: black
+    a,.sep
+      color: rgba(0,0,0,0.5)
+
+  .portfolio-intro
+    background:
+      image: image-url('park-circus/header.jpg')
+      color: black
+      repeat: no-repeat
+      position: center 0
+      size: 100%
+      attachment: fixed
+    +until-breakpoint(8)
+      background-size: auto 100%
+      background-position: center 0
+      background-attachment: local
+
+  .cover_image
+    float: right
+    width: col-width(6)
+    margin-left: col-width(1)
+    +until-breakpoint(12)
+      width: col-width(4)
+    +until-breakpoint(8)
+      width: 100%
+
+  .search_image
+    float: left
+    width: 50%
+    margin-right: col-width(1)
+    position: relative
+    top: -30px
+    +until-breakpoint(12)
+      width: 45%
+    +until-breakpoint(10)
+      width: 100%
+
+  ul
+    +until-breakpoint(10)
+      clear: left

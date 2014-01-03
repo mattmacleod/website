@@ -1,0 +1,61 @@
+---
+title: Park Circus Films
+abstract: A media-heavy catalog site for the international film distributor.
+---
+
+.portfolio-page#park-circus-portfolio-page
+  .portfolio-intro
+    .centered
+      .content-title
+        = link_to "Home", "/"
+        %span.sep →
+        Portfolio
+      .text
+        %h1 Park Circus Films
+        %p.lede As the Technical Director of <a href="http://www.tictocfamily.com">tictoc</a>, I was the backend developer for this multilingual, media-heavy information and catalog website for the international film distributor.
+
+  .portfolio-content
+    .centered
+      .content.clear
+        = image_tag "park-circus/screen-1.jpg", :class => :cover_image
+        .park-circus-intro
+          :markdown
+            ## About the project
+
+            Park Circus is an international film distribution company responsible for over 20,000 titles from many of the world's biggest movie studios.
+
+            They approached [tictoc](http://www.tictocfamily.com) looking for a new and improved website which would be able to showcase their extensive database in a visually engaging format, and which would allow for hassle-free management of the content.
+
+            The resulting solution at [www.parkcircus.com](http://www.parkcircus.com) is a visually engaging site with easy access to sort and search their film database, and to learn more about the services they provide.
+
+            ## The Film Database
+
+            Due to the large database of films to be featured on this site, it was important to ensure ease-of-access to site visitors, and ease of management for Park Circus.
+
+            The site's film database is integrated directly with the company's internal management systems, periodically pulling updates to the data and refreshing the corresponding website content through a series of predefined transforms.
+
+  .portfolio-content
+    .centered
+      .content
+        %h2 Key features
+        = image_tag "park-circus/search01.png", :class => :search_image
+        %ul
+          %li Clean, accessible and cross-platform design implemented by <a href='http://www.tictocfamily.com'>tictoc</a>'s in-house designers.
+          %li Comprehensive film search covering a variety of data fields, with free text search and disambiguation.
+          %li Searchable database of film screenings, detailing the company's films current showing across the world.
+          %li Near-real-time integration with a the company's internal film management management app.
+          %li Fully content-managed, with features for uploading and editing additional assets and editing text.
+          %li Multilingual, with a French version derived from the same database but offering translated content.
+ 
+
+  .portfolio-content
+    .centered
+      .content
+        %h2 Further information
+        %p <a href='http://www.tictocfamily.com'>tictoc</a> are a UK-wide digital marketing agency with offices in London and Glasgow, and they're great guys – if you're looking for an agency, give them a shout! 
+
+
+  .centered
+    .content-footer
+      = link_to "← Back", "/"
+

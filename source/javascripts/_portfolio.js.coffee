@@ -15,12 +15,12 @@
 
     return if Modernizr.touch
 
-    $(window).off("scroll").on "scroll", ->
+    $(window).off("scroll resize").on "scroll resize", ->
       pos = $(window).scrollTop()
       window_height = $(window).height()
 
       # Offset the intro image
-      $('#fest-portfolio-page .portfolio-intro').css "background-position", "0 -#{ pos/3 }px"
+      $('.portfolio-intro').css "background-position", "center -#{ pos/3 }px"
 
       # If the galleries are in view, offset by up to 10% divided by the amount that they're in view...
       galleries.each ->

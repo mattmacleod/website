@@ -5,9 +5,11 @@
 
   .title
     float: left
-    +adjust-font-size-to(24px)
+    +adjust-font-size-to(22px)
     text-transform: uppercase
     font-weight: bold
+    position: relative
+    z-index: 5000
     a
       display: block
       color: white
@@ -16,6 +18,7 @@
     float: right
     padding: rhythm(0.25) 0
     position: relative
+    z-index: 2000
     a
       display: inline-block
       margin-left: $gutter-width
@@ -37,7 +40,7 @@
         position: absolute
         top: 0
         right: 0
-        padding: rhythm(0.15) $gutter-width
+        padding: rhythm(0.15) $gutter-width/2
         +symbol-font
         color: white
         +adjust-font-size-to(28px,1.5)

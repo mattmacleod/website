@@ -6,14 +6,17 @@
       color: rgba(255,255,255,0.5)
   .content
     +legacy-pie-clearfix
+    &.clear
+      clear: left
   .portfolio-intro
     margin: rhythm(-1) ($gutter-width*-1) 0 ($gutter-width*-1)
     padding: rhythm(1) $gutter-width
     position: relative
     .centered
-      overflow: hidden
-      position: relative
       min-height: rhythm(20)
+  .centered
+    overflow: hidden
+    position: relative
     .text
       position: absolute
       bottom: 0
@@ -32,17 +35,21 @@
   .portfolio-content
     padding: rhythm(1) 0
 
+  .portfolio-gallery
+    margin: 0 -$gutter-width
+    +trailer(1)
+    img
+      width: 100%
+
 #fest-portfolio-page
 
   h2.section_title
-    float: left
     text-transform: uppercase
     +adjust-font-size-to(34px,2)
     +trailer(0.5)
     font-weight: bold
-  
-  .content
-    clear: left
+    &.left
+      float: left
 
   .portfolio-intro
     background:
@@ -75,6 +82,7 @@
   img.preview_grid_image_2
     width: 50%
     float: right
+
   img.issue_inner_image_1
     width: 50%
     float: left
@@ -85,9 +93,27 @@
     width: 70%
     display: block
     margin: 0 auto
+
+  img.website_ipad_1
+    width: 45%
+    float: left
+    display: block
+    clear: left
+
+  img.braincube_1
+    width: 50%
+    float: right
+
   .cover-image-set
     overflow: hidden
     +trailer(1)
     img
       width: 20%
       float: left
+
+  .website-intro
+    width: 50%
+    margin-left: 5%
+    float: left
+
+

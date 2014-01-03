@@ -16,9 +16,9 @@ abstract: An annual publication covering the Edinburgh Festival
 
   .portfolio-content
     .centered
-      %h2.section_title What is Fest?
+      %h2.section_title.left What is Fest?
       = image_tag "fest/preview-cover-1.jpg", :class => :cover_image
-      .content
+      .content.clear
         .fest-intro
           :markdown
             Founded in 2002, Fest was launched with the goal of bringing a fresh editorial voice to the crowded Festival market. Over the course of ten festivals, it has grown steadily to become the largest magazine covering the Edinburgh Festival.
@@ -65,3 +65,50 @@ abstract: An annual publication covering the Edinburgh Festival
         = image_tag "fest/issue-inner-2.jpg", :class => :issue_inner_image_2
         = image_tag "fest/issue-inner-3.jpg", :class => :issue_inner_image_3
 
+  .portfolio-content 
+    .centered
+      %h2.section_title The Website
+      = image_tag "fest/website-ipad-1.jpg", :class => :website_ipad_1
+      .content.website-intro
+        %p We all know that publishing is moving to the Web, and at the Edinburgh Festival that's no different. Visitors are looking for faster and easier ways to gain access to information about what's on and tips about what they should see.
+        %p Key features of <a href='https://festmag.co.uk'>www.festmag.co.uk</a> include:
+        %ul
+          %li Up-to-the-minute reviews and features from the magazine plus additional online-only content
+          %li Cross-platform and responsive, with targeted tablet and mobile versions
+          %li Archive of the past seven years of Fest reviews and features
+          %li Full listings of every Festival event and venue
+          %li Content and event API for third-party access to all data
+          %li HTML5 geolocation, allowing users to find events happening nearby
+        %p The site is built with my own Rails-based Content Management System called Braincube. More information and the full source code is <a href='https://github.com/mattmacleod/Braincube'>available on github</a>.
+
+  .portfolio-gallery
+    = image_tag "fest/in-situ-screenshots.jpg"
+
+  .portfolio-content 
+    .centered
+      = image_tag "fest/braincube-1.jpg", :class => :braincube_1
+      %h2.section_title The Workflow
+      .content
+        %p Fest's website uses the <a href='https://github.com/mattmacleod/Braincube'>Braincube CMS</a>, which is an open-source publishing platform I developed as part of my work with Scottish arts and culture magazine <a href='http://www.theskinny.co.uk'>The Skinny</a>, and the student newspaper <a href='http://journal-online.co.uk'>The Journal</a>.
+        %p Braincube is primarily a highly customisable framework for building magazine websites. It's not a CMS in the traditional sense by itself, and in particular requires a developer to implement front-end templates. However, it's USP is the provision of several workflow, data and copy management features targeted specificly at low-overhead publishing:
+        %ul
+          %li Content pipeline for dual print and web publishing, allowing direct copy submission by journalists and online management through to print and online publishing.
+          %li Single-source management for print and online copy.
+          %li Extensive tagging features; organise content into arbitrary groups.
+          %li Asset management tools for image cropping and drag-and-drop uploads.
+          %li Direct integration with InDesign for page layout through use of the InDesign tagged text format.
+          %li Comprehensive events database for online event listings.
+          %li Multiple user support with access control.
+
+
+
+  .portfolio-content 
+    .centered
+      %h2.section_title More information
+      .content
+        %p If you'd like to find out more about Fest, or any of the work mentioned above, please get in touch using the form below. You can also give me a ping on <a href='https://twitter.com/matt_macleod'>Twitter.</a>
+
+
+  .centered
+    .content-footer
+      = link_to "← Back", "/"

@@ -33,6 +33,17 @@
     padding: rhythm(1) 0
 
 #fest-portfolio-page
+
+  h2.section_title
+    float: left
+    text-transform: uppercase
+    +adjust-font-size-to(34px,2)
+    +trailer(0.5)
+    font-weight: bold
+  
+  .content
+    clear: left
+
   .portfolio-intro
     background:
       image: image-url('fest/header.jpg')
@@ -40,10 +51,43 @@
       repeat: no-repeat
       size: 100%
       attachment: fixed
+
   .cover_image
     float: right
-    width: col-width(3)
-    margin-left: col-width(1) + $gutter-width
-    +until-breakpoint(10)
-      width: col-width(2.5)
-      margin-left: col-width(0.5) + $gutter-width
+    width: 45%
+    margin-left: 70px
+  
+  .image-padding
+    +trailer(1)
+    overflow: hidden
+  
+  img.preview_inner_image_1
+    width: 100%
+  img.preview_inner_image_2
+    width: 33%
+    float: left
+  img.preview_inner_image_3
+    width: 66%
+    float: right
+  img.preview_grid_image_1
+    width: 50%
+    float: left
+  img.preview_grid_image_2
+    width: 50%
+    float: right
+  img.issue_inner_image_1
+    width: 50%
+    float: left
+  img.issue_inner_image_2
+    width: 50%
+    float: right
+  img.issue_inner_image_3
+    width: 70%
+    display: block
+    margin: 0 auto
+  .cover-image-set
+    overflow: hidden
+    +trailer(1)
+    img
+      width: 20%
+      float: left

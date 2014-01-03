@@ -1,5 +1,5 @@
 ---
-title: Fest Magazine
+title: Fest Magazine — Portfolio
 abstract: An annual publication covering the Edinburgh Festival
 ---
 
@@ -13,17 +13,55 @@ abstract: An annual publication covering the Edinburgh Festival
       .text
         %h1 Fest Magazine
         %p.lede Fest is an annual magazine covering the Edinburgh Festival. Since launching in 2002, it's become the most widely-read and well-respected Festival review magazine. I've worked with Fest for 10 years as the Creative Director and technical lead. 
+
   .portfolio-content
     .centered
+      %h2.section_title What is Fest?
+      = image_tag "fest/preview-cover-1.jpg", :class => :cover_image
       .content
         .fest-intro
-          = image_tag "fest/preview-cover-1.jpg", :class => :cover_image
           :markdown
-            ## What is Fest?
             Founded in 2002, Fest was launched with the goal of bringing a fresh editorial voice to the crowded Festival market. Over the course of ten festivals, it has grown steadily to become the largest magazine covering the Edinburgh Festival.
             
             We publish six magazines every year – a chunky preview guide in July, which serves as a handbook for the whole of the festival, and five festival issues packed full of reviews and features which hits the streets every Tuesday and Friday during the Fringe. We print 125,000 magazines over the summer, which means you can find Fest pretty much anywhere in Edinburgh.
 
             We've also got a comprehensive responsive website at [www.festmag.co.uk](https://festmag.co.uk), which includes searchable listings of every event at the festival and geolocation features to help mobile users find nearby events.
 
-            
+
+  .portfolio-content 
+    .centered
+      %h2.section_title The Preview Guide
+      .content
+        %p We publish the short-A4 format, 100-page, perfect-bound Fest Preview guide in July. It features extensive coverage of what's coming up at the Festival, tips on the most anticipated shows, interviews with leading Festival participants and a directory of the best places to eat, drink and visit while in Edinburgh.
+      = image_tag "fest/preview-inner-1.jpg", :class => :preview_inner_image_1
+      .content
+        %p The Preview Guide features a clean and accessible design, colour-keyed for ease of navigation, and with extensive use of fantastic original photo shoots by our excellent photo chief <a href='http://www.lensonlegs.co.uk'>Claudine Quinn</a>.
+      .image-padding
+        = image_tag "fest/preview-inner-2.jpg", :class => :preview_inner_image_2
+        = image_tag "fest/preview-inner-3.jpg", :class => :preview_inner_image_3
+      .content
+        %p I developed a flexible grid system in InDesign for the Preview guide, which allows for a variety of eyecatching layouts while maintaining navigability and ease-of-use. The unique 24-column layout allows for grids of 3×3, 4×4, 6×6 and two different layouts of 3½ columns, which means our features never feel constrained by available layout options. This is integrated with our workflow software to allow super-quick turnaround times, with the whole 100-page magazine going from idea to print in under 40 hours of layout time.
+      .image-padding
+        = image_tag "fest/preview-grid-1.jpg", :class => :preview_grid_image_1
+        = image_tag "fest/preview-grid-2.jpg", :class => :preview_grid_image_2
+
+  .portfolio-content 
+    .centered
+      %h2.section_title The Festival issues
+      .content
+        %p We publish 5 additional magazines during the course of the Festival. These are 100-page A5 saddle-stitched editions, published every Tuesday and Friday. We're the only A5-format Festival publication, and the only glossy magazine that prints multiple editions every week – and it pays off, with Festival visitors hanging on to the magazine wherever they go. 
+      .cover-image-set
+        = image_tag "fest/issue-cover-1.jpg"
+        = image_tag "fest/issue-cover-2.jpg"
+        = image_tag "fest/issue-cover-3.jpg"
+        = image_tag "fest/issue-cover-4.jpg"
+        = image_tag "fest/issue-cover-5.jpg"
+      .content
+        %p The Festival issues are mostly packed full of show reviews, with a couple of features on interesting people of shows. Most importantly, we also include full listings of every comedy and theatre show at the Festival - and we're the only magazine to do this.
+        %p The big challenge for these issues is the super-quick turnaround required. The time between receiving a review and the magazine hitting the streets can be as little at 36 hours - in that time, we need to process, edit, layout and get the magazine to print.
+        %p Over the years, we've established a low-overhead workflow to ensure it's possible to process the huge amounts of copy we need. I developed a tightly-integrated workflow management system build obn top of our website – it exports article copy to an InDesign-specific tagged text format, which allows us to eliminate a lot of tedious formatting steps, essentially dropping the article content directly onto the page, automatically including information about show times and star ratings pulled directly from our show information API.
+      .image-padding
+        = image_tag "fest/issue-inner-1.jpg", :class => :issue_inner_image_1
+        = image_tag "fest/issue-inner-2.jpg", :class => :issue_inner_image_2
+        = image_tag "fest/issue-inner-3.jpg", :class => :issue_inner_image_3
+

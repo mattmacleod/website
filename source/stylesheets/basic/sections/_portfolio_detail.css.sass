@@ -214,3 +214,47 @@
   ul
     +until-breakpoint(10)
       clear: left
+
+#intralink-portfolio-page
+
+  .content-title
+    color: white
+    a,.sep
+      color: rgba(255,255,255,0.5)
+
+  .portfolio-intro
+    background:
+      image: image-url('intralink/header.jpg')
+      color: black
+      repeat: no-repeat
+      position: center 0
+      size: 100%
+      attachment: fixed
+    +until-breakpoint(8)
+      background-size: auto 100%
+      background-position: center 0
+      background-attachment: local
+
+  .cover_image
+    float: right
+    width: col-width(8)
+    margin-left: col-width(1)
+    +until-breakpoint(12)
+      width: col-width(4)
+    +until-breakpoint(8)
+      width: 100%
+
+  .screen_image
+    float: left
+    width: 50%
+    margin-right: col-width(1)
+    position: relative
+    top: -30px
+    +until-breakpoint(12)
+      width: 45%
+    +until-breakpoint(10)
+      width: 100%
+
+  ul
+    +until-breakpoint(10)
+      clear: left

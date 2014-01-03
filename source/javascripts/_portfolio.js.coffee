@@ -30,5 +30,4 @@
         # Translate to an offset
         offset_amount = (gallery_position * max_offset) - (max_offset/2) 
 
-        console.log "#{gallery_position} => #{offset_amount}"
         gallery.find("img").css "-webkit-transform", "scale(1.5) translateY(#{ offset_amount }px)"

@@ -1,8 +1,17 @@
 @app.portfolio =
 
   setup: ->
+    @handle_scroll()
+    @handle_back_to_top()
+
+  handle_back_to_top: ->
+    $("#back_to_top_link").off("click").on "click", ->
+      $('html, body').scrollTo();
+
+  handle_scroll: ->
     intro_panel = $('#fest-portfolio-page .portfolio-intro')
     galleries   = $(".portfolio-gallery")
+    link        = $("#back_to_top_link")
 
     return if Modernizr.touch
 
@@ -31,3 +40,18 @@
         offset_amount = (gallery_position * max_offset) - (max_offset/2) 
 
         gallery.find("img").css "-webkit-transform", "scale(1.5) translateY(#{ offset_amount }px)"
+
+
+      if pos > 600
+        link.show()
+        window.setTimeout ->
+          link.addClass "visible"
+        , 200
+      else
+        link.removeClass "visible"
+        window.setTimeout ->
+          link.hide()
+        , 200
+
+
+

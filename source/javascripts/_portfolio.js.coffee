@@ -31,15 +31,15 @@
         # Do nothing unless the gallery is visible
         return unless ((gallery_top + gallery_height) > pos) && (gallery_top < (pos + window_height))
 
-        max_offset = gallery_height / 3
+        max_offset = gallery_height / 4
 
         # Current distance from the top of the page as percentage
         gallery_position = (gallery_top + gallery_height - pos) / window_height
 
         # Translate to an offset
-        offset_amount = (gallery_position * max_offset) - (max_offset/2) 
+        offset_amount = -1 * ((gallery_position * max_offset) - (max_offset/2)) 
 
-        gallery.find("img").css "-webkit-transform", "scale(1.5) translateY(#{ offset_amount }px)"
+        gallery.find("img").css "-webkit-transform", "scale(1.34) translateY(#{ offset_amount }px)"
 
 
       if pos > 600

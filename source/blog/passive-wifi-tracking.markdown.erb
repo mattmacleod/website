@@ -1,0 +1,39 @@
+---
+title: Passive wifi presence detection using Raspberry Pi
+blog_title: Passive wifi presence detection using Raspberry Pi
+date: 2014-01-06
+---
+
+# Passive wifi presence detection on Raspberry Pi
+
+At [Digital Science](https://www.digital-science.com), we try to get the engineering team out of the office for a Hack Break every year, to give us the opportunity to kick around some ideas and play with new technology. Among other projects, this year we built a system that would allow us to keep track of who was in the office each day – we've got a few remote workers and a couple of different spaces in our office building, and figured it would be useful to know who was where.
+
+We had a couple of ideas about how this might be implemented - RFID cards or QR codes that would require a quick scan on arrival, or something similar. Then we realised that most of our staff are carrying mobile devices with wifi support—laptops and phones—and decided that we'd try to track the location of these devices.
+
+## The setup
+
+Our tracking platform (which we called Presents, until we come up with a better name) uses several [Raspberry Pi](http://www.raspberrypi.org) "data collection" nodes placed throughout the office, teamed up with a data aggregation service with an API for plugging into various other systems and querying data.
+
+Here's a brief overview:
+
+<%= image_tag "blog/presents-diagram.png", :class => :left %>
+
+
+- The Raspberry Pi scanners each have two USB wifi dongles: one for scanning wifi frequencies for devices we want to track, and one for connecting to the office network.
+
+- Software on the scanner nodes capture the MAC address and timestamp of every wifi packet they see, and push events into Redis on the data aggregation server.
+
+- A Rails worker on the server consumes packets from Redis, filtering for MAC addresses we care about and inserting records into MySQL.
+
+- The Rails app also provides a JSON API endpoint which allows the location of staff to be queried, and a dashboard-style HTML frontend for display on TV screens in the office.
+
+## The wifi scanners
+
+### Hardware
+
+You're probably familiar with the Raspberry Pi – it's a low-cost, single-board ARM computer designed to be hacker-friendly, and it's perfect for this sort of job. We've combined it with a snazzy case and two Tenda W522U Dual Band wifi dongles – these support both 2.4GHz and 5GHz frequencies. Then it's just a standard USB power supply and an SD card, and we've got everything we need.
+
+### Software
+
+We run a minimal installation of [Raspbian](https://www.raspbian.org) from a read-only filesystem on the Raspberry Pi's SD card, and immediately launch Kismet and our custom scanning sofrware. [Kismet](http://www.kismetwireless.net) is the gold-standard in open-source wifi tools – it's a layer 2 network sniffer which can passively monitor wireless traffic by using the RFMON mode of most wifi adapters, and it works great on the Raspberry Pi.
+

@@ -84,3 +84,9 @@ configure :build do
   require "middleman-smusher"
   activate :smusher
 end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.remote   = "github-pages"
+  deploy.branch   = "master"
+end

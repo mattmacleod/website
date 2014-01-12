@@ -7,8 +7,6 @@
     #structure-content
       .centered
         .content-title
-          = link_to "Home", "/"
-          %span.sep →
           Blog
         .content
           %time.blog_date{ :datetime => current_page.data[:date].strftime("%Y-%M-%d") }= current_page.data[:date].strftime "%A %d %B#{" %Y" if current_page.data[:date] <= Date.today - 365 }" 

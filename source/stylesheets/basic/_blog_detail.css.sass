@@ -8,7 +8,9 @@ body.blog_post #structure-content
     text-transform: uppercase
     color: #666
     display: block
-    +trailer(-1.5)
+    +adjust-font-size-to(11px,0.5)
+    &+h1
+      +leader(0)
 
 body.blog_post .content
   img.left

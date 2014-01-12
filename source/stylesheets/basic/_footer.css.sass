@@ -12,7 +12,6 @@
   .notes
     float: left
     width: 50%
-    +leader(0.5)
     +legacy-pie-clearfix
     padding-right: $gutter-width/2
     
@@ -55,46 +54,3 @@
         margin-right: $gutter-width
         &:hover
           +scale(1.1)
-
-  form
-    float: right
-    width: 50%
-    padding-left: $gutter-width/2
-    
-    +until-breakpoint(8)
-      width: 100%
-      float: none
-      padding: 0
-      +leader(1)
-
-    .field
-      padding: rhythm(0.25) $gutter-width/2
-      width: 100%
-      float: left
-      &.half
-        width: 50%
-        +until-breakpoint(6)
-          width: 100%
-     
-      input, textarea
-        width: 100%
-        border: 1px #333 solid
-        padding: rhythm(0.25) $gutter-width/2
-        background: #444
-        +adjust-font-size-to(16px)
-        color: white
-     
-        &[type=submit]
-          background: $color-1
-          cursor: pointer
-          float: right
-          width: auto
-          padding: rhythm(0.25) $gutter-width*2
-          +appearance(none)
-          +transition(all 200ms ease-in-out)
-          &:hover
-            +scale(1.1)
-     
-        &:focus
-          outline: none
-          border-color: $color-1

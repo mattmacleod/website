@@ -16,7 +16,7 @@ Our tracking platform (which we called Presents, until we come up with a better 
 
 Here's a brief overview:
 
-<%= image_tag "blog/presents-diagram.png", :class => :left %>
+<%= image_tag "blog/presents-diagram.png" %>
 
 
 - The Raspberry Pi scanners each have two USB wifi dongles: one for scanning wifi frequencies for devices we want to track, and one for connecting to the office network.
@@ -37,3 +37,61 @@ You're probably familiar with the Raspberry Pi – it's a low-cost, single-board
 
 We run a minimal installation of [Raspbian](https://www.raspbian.org) from a read-only filesystem on the Raspberry Pi's SD card, and immediately launch Kismet and our custom scanning sofrware. [Kismet](http://www.kismetwireless.net) is the gold-standard in open-source wifi tools – it's a layer 2 network sniffer which can passively monitor wireless traffic by using the RFMON mode of most wifi adapters, and it works great on the Raspberry Pi.
 
+We use a custom Ruby script to communicate with Kismet using it's straightforward remote monitoring protocol, and to format and push the information into our central Redis server. First, we setup connections to Redis and Kismet:
+
+
+~~~~ruby
+def scan!
+    @ki = KismetInterface.new(:host => @kismet_host, :port => @kismet_port, :id => @id)
+    @ri = RedisInterface.new(:host => @redis_host, :port => @redis_port, :buffer_size => @buffer_size, :password => @redis_pass)
+    puts "  Scanner service is waiting for packets"
+    while packet = @ki.read_packet
+      @ri.queue! packet
+    end
+  end
+~~~~
+
+We immediately open a socket connection to Kismet, and instruct it to remove the once-per-second timestamp we'd otherwise get. We also tell the server to send us the MAC address and signal strenth of all wifi packets it sees. That's pretty much the core of our scanner complete!
+
+~~~~ruby
+def setup_kismet!
+    @socket = TCPSocket.open @host, @port
+    send_cmd "REMOVE TIME" 
+    send_cmd "ENABLE CLIENT mac,signal_dbm"
+  end
+~~~~
+
+Then all we have to do is read the output from Kismet:
+
+~~~ruby
+
+ def read_packet
+    while str = @socket.gets
+      processed_string = process(str)
+      return processed_string if processed_string
+    end
+  end
+
+  def process str
+    return unless str =~ /\*CLIENT/
+    client_mac, signal = str.split(" ")[1,2]
+    return "#{ @id }|#{ Time.now.to_i }|#{ client_mac }|#{ signal }"
+  end
+~~~~
+
+Magic. We've now got a formatted string ready to push into our Redis queue.
+
+Obviously there's a bit of work around configuring Kismet and Rasbian to work with multiple wifi dongles, but this is pretty straightforward. Thanks to the read-only root on the Raspberry Pi, if anything goes wrong, we can just toggle the power.
+
+
+## The backend
+
+We're hosting our Redis queue and frontend web server on an m1.small AWS instance – there's nothing much too it, so it's not that taxing.
+
+We're using a simple Rails app with [Rufus Scheduler](https://github.com/jmettraux/rufus-scheduler) to pull data from Redis every 10s and insert it into MySQL. This gives us the opportunity to throw out any packets we're not interested in and get the data into a relational structure suitable for some of the more complex queries we want to make later.
+
+## The frontend
+
+There are two interfaces to our backend app – a simple JSON API for querying the current location of registered users, and an HTML dashboard that we display around the office. The JSON API is primarily for the use of our Hubot installation, so that we can query locations directly from Hipchat. 
+
+The dasboard interface in particular is pretty cool, and I'll follow up with more details in another post soon!

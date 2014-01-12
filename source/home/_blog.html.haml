@@ -4,4 +4,4 @@
     %li
       - link_to post[:page].path do
         %h3= post[:title]
-        %time{ :datetime => post[:date].strftime("%Y-%M-%d") }= post[:date].strftime "%A %d %B#{" %Y" if post[:date] <= Date.today - 365 }" 
+        %time{ :datetime => post[:date].strftime("%Y-%m-%d") }= post[:date].strftime "%A %d %B#{" %Y" if post[:date] <= Date.today - 365 }" 

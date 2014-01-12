@@ -9,7 +9,7 @@
         .content-title
           Blog
         .content
-          %time.blog_date{ :datetime => current_page.data[:date].strftime("%Y-%M-%d") }= current_page.data[:date].strftime "%A %d %B#{" %Y" if current_page.data[:date] <= Date.today - 365 }" 
+          %time.blog_date{ :datetime => current_page.data[:date].strftime("%Y-%m-%d") }= current_page.data[:date].strftime "%A %d %B#{" %Y" if current_page.data[:date] <= Date.today - 365 }" 
           ~yield
         .content-footer
           = link_to "← Back", "/"

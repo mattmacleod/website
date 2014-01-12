@@ -84,12 +84,12 @@
 
   .cover_image
     float: right
+    +leader(0.5)
     width: col-width(6)
     margin-left: col-width(1)
     +until-breakpoint(14)
-      margin-left: col-width(0.5)
-    +until-breakpoint(12)
       width: col-width(5)
+    +until-breakpoint(12)
       margin-left: col-width(0.5)
     +until-breakpoint(10)
       margin-left: 0
@@ -103,22 +103,18 @@
   
   img.preview_inner_image_1
     width: 100%
+
   img.preview_inner_image_2
-    width: 33%
-    float: left
-  img.preview_inner_image_3
-    width: 66%
+    width: col-width(8)
+    margin-left: col-width(1) + $gutter-width
     float: right
-  img.preview_grid_image_1
-    width: 50%
-    float: left
-  img.preview_grid_image_2
-    width: 50%
-    float: right
-  img.preview_grid_image_1, img.preview_grid_image_2
+    +until-breakpoint(14)
+      width: col-width(6)
+      margin-left: col-width(0.5) + $gutter-width
     +until-breakpoint(10)
-      float: none
       width: 100%
+      margin-left: 0
+
 
   img.issue_inner_image_1
     width: 50%
@@ -126,14 +122,9 @@
   img.issue_inner_image_2
     width: 50%
     float: right
-  img.issue_inner_image_3
-    width: 70%
-    display: block
-    margin: 0 auto
 
   img.issue_inner_image_1,
-  img.issue_inner_image_2,
-  img.issue_inner_image_3
+  img.issue_inner_image_2
     +until-breakpoint(10)
       width: 100%
 
@@ -156,13 +147,16 @@
   .cover-image-set
     overflow: hidden
     +trailer(1)
+    width: 50%
+    float: right
+    text-align: center
     img
-      width: 20%
-      float: left
-      +until-breakpoint(10)
-        width: 50%
-        &:nth-child(3)
-          display: none
+      display: inline-block
+      width: 48%
+    +until-breakpoint(12)
+      width: 100%
+      img
+        width: 30%
 
   .website-intro
     width: 50%
@@ -173,6 +167,13 @@
       margin-left: 0
       float: none
 
+  p.top-padded
+    +padding-leader(1)
+    +until-breakpoint(14)
+      +padding-leader(0)
+
+  ul.braincube-list
+    clear: both
 
 #park-circus-portfolio-page
 

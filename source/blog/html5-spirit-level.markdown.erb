@@ -10,7 +10,7 @@ HTML5 has some pretty cool APIs for doing lots of things that previously would o
 
 I've been doing some work with the `deviceorientation` event that mobile devices fire when they're moved and rotated. This is a pretty simple event that provides `alpha`, `beta` and `gamma` values describing the device's orientation, and can be used to implement quite a variety of different effects.
 
-Combining this with the `canvas` element, I've put together a <%= link_to "demo HTML5 spirit level app", "/codez/spirit-level/index.html" %> modeled after the one built into iOS's compass app. The UI is pretty straightforward:
+Combining this with the `canvas` element, I've put together a <%= link_to "demo HTML5 spirit level app", "/codez/spirit-level/index.html", "data-no-turbolink" => true %> modeled after the one built into iOS's compass app. The UI is pretty straightforward:
 
 <p>
 <%= image_tag "blog/spirit-level-1.png", :class => "half left" %>
@@ -19,4 +19,4 @@ Combining this with the `canvas` element, I've put together a <%= link_to "demo 
 
 There's some stupid code for various edge cases, but in general it's becoming increasingly easy to write compelling HTML5 apps that use device hardware features.
 
-You can check out the <%= link_to "code on github", "https://github.com/mattmacleod/html5-spirit-level", :target => "_blank" %> or <%= link_to "have a look at the app", "/codez/spirit-level/index.html" %>.
+You can check out the <%= link_to "code on github", "https://github.com/mattmacleod/html5-spirit-level", :target => "_blank" %> or <%= link_to "have a look at the app", "/codez/spirit-level/index.html", "data-no-turbolink" => true %>.

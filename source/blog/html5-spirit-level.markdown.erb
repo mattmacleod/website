@@ -1,0 +1,22 @@
+---
+title: HTML5 spirit level
+blog_title: HTML5 spirit level
+date: 2014-01-25
+---
+
+# HTML5 Spirit Level
+
+HTML5 has some pretty cool APIs for doing lots of things that previously would only have been achievable with native apps.
+
+I've been doing some work with the `deviceorientation` event that mobile devices fire when they're moved and rotated. This is a pretty simple event that provides `alpha`, `beta` and `gamma` values describing the device's orientation, and can be used to implement quite a variety of different effects.
+
+Combining this with the `canvas` element, I've put together a <%= link_to "demo HTML5 spirit level app", "/codez/spirit-level/index.html" %> modeled after the one built into iOS's compass app. The UI is pretty straightforward:
+
+<p>
+<%= image_tag "blog/spirit-level-1.png", :class => "half left" %>
+<%= image_tag "blog/spirit-level-2.png", :class => "half"  %>
+</p>
+
+There's some stupid code for various edge cases, but in general it's becoming increasingly easy to write compelling HTML5 apps that use device hardware features.
+
+You can check out the <%= link_to "code on github", "https://github.com/mattmacleod/html5-spirit-level", :target => "_blank" %> or <%= link_to "have a look at the app", "/codez/spirit-level/index.html" %>.

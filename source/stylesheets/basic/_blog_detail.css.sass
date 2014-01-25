@@ -3,7 +3,9 @@ body.blog_post #structure-content
   padding-right: $gutter-width
   +leader(1)
   +trailer(2)
-  
+  .content
+    overflow: hidden
+
   .blog_date
     text-transform: uppercase
     color: #666
@@ -15,7 +17,8 @@ body.blog_post #structure-content
 body.blog_post .content
   img
     width: 100%
-  img.left
-    width: 66%
-    float: left
-    margin-right: col-width(1) + $gutter-width
+    &.half
+      width: 48%
+      float: left
+      &.left
+        margin-right: 2%

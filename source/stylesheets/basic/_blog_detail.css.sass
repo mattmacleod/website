@@ -22,3 +22,7 @@ body.blog_post .content
       float: left
       &.left
         margin-right: 2%
+      +until-breakpoint(10)
+        width: 100%
+        float: none
+        margin: 0
